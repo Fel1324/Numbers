@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <title>Numbers | Sorteador de números</title>
+    <link rel="stylesheet" href="./styles/imports.css">
+  </head>
+  <body>
+    <img class="logo" src="./assets/logo.svg" alt="Logo Numbers">
+
+    <div id="app">
+      <header class="header">
+        <span class="overline">Online - gratuito</span>
+        <h1>Sorteador de números</h1>
+      </header>
+
+      <main class="main">
+        <h2>Quero sortear:</h2>
+        <p>Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+
+        <form id="form">
+          <div class="input-wrapper">
+            <div class="input-group">
+              <label for="numbers">Números</label>
+              <input type="text" name="numbers" id="numbers" placeholder="2">
+            </div>
+
+            <div class="input-group">
+              <label for="start">De</label>
+              <input type="text" name="starts" id="starts" placeholder="1">
+            </div>
+
+            <div class="input-group">
+              <label for="end">De</label>
+              <input type="text" name="end" id="end" placeholder="100">
+            </div>
+          </div>
+
+          <div class="switch-wrapper">
+            <input type="checkbox" name="repeat" id="repeat">
+            <label for="repeat">Não repetir número</label>
+          </div>
+        </form>
+      </main>
+
+      <section class="questions">
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
