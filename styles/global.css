@@ -48,7 +48,7 @@ html, body{
   height: auto;
   min-height: 100vh;
 
-  background: var(--background-primary) url("../assets/img/bg.png") center;
+  background: var(--background-primary) url("../assets/img/bg.png") top;
   color: var(--content-primary);
   font: var(--p-lg);
 }

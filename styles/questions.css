@@ -1,0 +1,24 @@
+.questions{
+  & > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+
+    list-style-type: none;
+
+    & > li{
+      display: flex;
+      gap: .5rem;
+
+      & h3{
+        font: var(--p-md);
+        color: var(--content-brand);
+      }
+
+      & p{
+        font: var(--p-sm);
+        color: var(--content-secondary);
+      }
+    }
+  }
+}

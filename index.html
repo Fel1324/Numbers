@@ -24,31 +24,65 @@
         <p>Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
 
         <form id="form">
-          <div class="input-wrapper">
-            <div class="input-group">
-              <label for="numbers">Números</label>
-              <input type="text" name="numbers" id="numbers" placeholder="2">
+          <div class="fields-wrapper">
+            <div class="input-wrapper">
+              <div class="input-group">
+                <label for="numbers">Números</label>
+                <div class="gradient-border">
+                  <input type="text" name="numbers" id="numbers" placeholder="2" minlength="1" maxlength="3" required>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="start">De</label>
+                <div class="gradient-border">
+                  <input type="text" name="starts" id="starts" placeholder="1" minlength="1" maxlength="3" required>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="end">Até</label>
+                <div class="gradient-border">
+                  <input type="text" name="end" id="end" placeholder="100" minlength="1" maxlength="3" required>
+                </div>
+              </div>
             </div>
 
-            <div class="input-group">
-              <label for="start">De</label>
-              <input type="text" name="starts" id="starts" placeholder="1">
-            </div>
-
-            <div class="input-group">
-              <label for="end">De</label>
-              <input type="text" name="end" id="end" placeholder="100">
+            <div class="switch-wrapper">
+              <input type="checkbox" name="repeat" id="repeat">
+              <label for="repeat">Não repetir número</label>
             </div>
           </div>
 
-          <div class="switch-wrapper">
-            <input type="checkbox" name="repeat" id="repeat">
-            <label for="repeat">Não repetir número</label>
-          </div>
+          <button id="draw" type="submit" aria-label="Sortear">
+            Sortear
+            <img src="./assets/icons/arrow-right.svg" alt="">
+          </button>
         </form>
       </main>
 
       <section class="questions">
+        <ul role="list">
+          <li>
+            <div>
+              <img src="./assets/icons/question.svg" alt="">
+            </div>
+
+            <div>
+              <h3>Como funciona o sorteador de números?</h3>
+              <p>O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <img src="./assets/icons/question.svg" alt="">
+            </div>
+
+            <div>
+              <h3>Posso escolher o intervalo dos números?</h3>
+              <p>Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
+            </div>
+          </li>
+        </ul>
       </section>
     </div>
 
