@@ -1,4 +1,7 @@
 .questions{
+  grid-area: questions;
+  max-width: 24.125rem;
+
   & > ul{
     display: flex;
     flex-direction: column;

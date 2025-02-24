@@ -55,20 +55,20 @@ html, body{
 
 body{
   padding: 2.75rem 2.25rem;
-
-  & > img.logo{
-    display: block;
-    margin-inline: auto;
-  }
 }
 
 img{
   vertical-align: top;
 }
 
+.logo{
+  text-align: center;
+}
+
 #app{
   width: min(100%, 20.5rem);
   margin-inline: auto;
+  margin-top: 2.875rem;
 
   display: grid;
   grid-template-areas: 
@@ -79,4 +79,31 @@ img{
 
 ul{
   list-style-type: none;
+}
+
+@media screen and (width >= 1024px) {
+  body{
+    padding-block: 4.75rem;
+  }
+
+  .logo{
+    max-width: 70rem;
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  #app{
+    width: min(100%, 70rem);
+    grid-template-columns: 32rem auto;
+    grid-template-areas: 
+    "header main"
+    "questions main";
+    column-gap: 6.75rem;
+  }
+}
+
+@media screen and (width >= 1300px) {
+  .logo img{
+    transform: translateX(-1rem);
+  }
 }
