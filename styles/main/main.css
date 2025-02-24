@@ -1,0 +1,85 @@
+.main{
+  margin-block: 2.625rem 5rem;
+  
+  & > h2{
+    font: var(--label-md);
+    text-transform: uppercase;
+    margin-bottom: .125rem;
+  }
+
+  & > p{
+    font: var(--p-md);
+    color: var(--content-tertiary);
+  }
+}
+
+.btn-wrapper{
+  background: var(--background-tertiary);
+  border-radius: .5rem;
+  padding: .125rem;
+
+  & > .btn{
+    background-color: var(--background-tertiary);
+    border: none;
+    border-radius: .4375rem;
+    width: 100%;
+    height: 3.5rem;
+
+    font: var(--label-sm);
+    color: var(--content-primary);
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    transition: background-color 500ms ease-in-out;
+
+    & > img{
+      transition: transform 350ms ease-in-out;
+    }
+  }
+
+  &:has(:hover){
+    animation: alternativeGradient 700ms infinite;
+
+    & > #draw{
+      background-color: var(--background-secondary);
+
+      & > img{
+        transform: translateX(.625rem);
+      }
+    }
+  }
+}
+
+@keyframes alternativeGradient {
+  0%{
+    background: linear-gradient(90deg, var(--gradient-border));
+  }
+  12.5%{
+    background: linear-gradient(135deg, var(--gradient-border));
+  }
+  25%{
+    background: linear-gradient(180deg, var(--gradient-border));
+  }
+  37.5%{
+    background: linear-gradient(225deg, var(--gradient-border));
+  }
+  50%{
+    background: linear-gradient(270deg, var(--gradient-border));
+  }
+  62.5%{
+    background: linear-gradient(315deg, var(--gradient-border));
+  }
+  75%{
+    background: linear-gradient(360deg, var(--gradient-border));
+  }
+  87.5%{
+    background: linear-gradient(45deg, var(--gradient-border));
+  }
+  100%{
+    background: linear-gradient(90deg, var(--gradient-border));
+  }
+}
