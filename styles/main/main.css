@@ -5,11 +5,28 @@
     font: var(--label-md);
     text-transform: uppercase;
     margin-bottom: .125rem;
+
+    &.txt-center{
+      text-align: center;
+    }
+    &.mg-top{
+      margin-top: 1.75rem;
+    }
   }
 
   & > p{
     font: var(--p-md);
     color: var(--content-tertiary);
+  }
+
+  & > span{
+    font: var(--overline);
+    text-transform: uppercase;
+    text-align: center;
+
+    display: block;
+    color: var(--content-secondary);
+    margin-top: .25rem;
   }
 }
 
@@ -17,6 +34,10 @@
   background: var(--background-tertiary);
   border-radius: .5rem;
   padding: .125rem;
+
+  &.opacity{
+    opacity: 0;
+  }
 
   & > .btn{
     background-color: var(--background-tertiary);
@@ -44,11 +65,15 @@
   &:has(:hover){
     animation: alternativeGradient 700ms infinite;
 
-    & > #draw{
+    & > .btn{
       background-color: var(--background-secondary);
 
-      & > img{
+      & > img[src*="arrow"]{
         transform: translateX(.625rem);
+      }
+
+      & > img[src*="again"]{
+        transform: rotate(360deg);
       }
     }
   }

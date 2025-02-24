@@ -76,3 +76,7 @@ img{
   "main"
   "questions";
 }
+
+ul{
+  list-style-type: none;
+}
