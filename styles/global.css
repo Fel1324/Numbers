@@ -43,6 +43,11 @@
   --label-sm: 700 1rem/1.5 var(--ff-base);
 }
 
+::selection{
+  background: var(--content-brand);
+  color: var(--content-primary);
+}
+
 html, body{
   width: 100%;
   height: auto;
@@ -62,6 +67,8 @@ img{
 }
 
 .logo{
+  max-width: 70rem;
+  margin-inline: auto;
   text-align: center;
 }
 
@@ -87,18 +94,17 @@ ul{
   }
 
   .logo{
-    max-width: 70rem;
-    margin-inline: auto;
     text-align: left;
   }
 
   #app{
     width: min(100%, 70rem);
     grid-template-columns: 32rem auto;
-    grid-template-areas: 
+    grid-template-areas:
     "header main"
     "questions main";
     column-gap: 6.75rem;
+    margin-top: 4rem;
   }
 }
 

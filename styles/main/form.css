@@ -96,7 +96,7 @@
         }
 
         &:checked{
-          background: linear-gradient(var(--gradient-background));
+          background: linear-gradient(to right, var(--gradient-background));
         }
 
         &:checked::after{
