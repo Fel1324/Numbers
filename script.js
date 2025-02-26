@@ -3,6 +3,7 @@
 const main = document.querySelector(".main");
 const mainDraw = document.querySelector("#mainDraw");
 const mainResults = document.querySelector("#mainResults");
+const results = document.querySelector("#results");
 
 const formEl = document.querySelector("#form");
 const numbersEl = document.querySelector("#numbers");
@@ -11,6 +12,7 @@ const endEl = document.querySelector("#end");
 const repeatNumberEl = document.querySelector("#repeatNumber");
 
 const numbersList = [];
+let delay = 1000;
 
 [numbersEl, startsEl, endEl].forEach((input) => {
   input.addEventListener("input", () => {
@@ -55,7 +57,13 @@ class NumberDrawer {
   }
 
   showResults(){
-    console.log(numbersList);
+    numbersList.forEach((number) => {
+      const num = document.createElement("li");
+      num.classList.add("number");
+      num.textContent = number;
+
+      results.append(num);
+    })
   }
 
   validate(numbers, starts, end){
