@@ -1,8 +1,16 @@
 .main{
   grid-area: main;
   margin-block: 2.625rem 5rem;
+
+  & > :not(.hidden){
+    animation: show 2s forwards;
+  }
+
+  & > .hidden{
+    display: none;
+  }
   
-  & > h2{
+  & h2{
     font: var(--label-md);
     text-transform: uppercase;
     margin-bottom: .125rem;
@@ -15,12 +23,12 @@
     }
   }
 
-  & > p{
+  & p{
     font: var(--p-md);
     color: var(--content-tertiary);
   }
 
-  & > span{
+  & span{
     font: var(--overline);
     text-transform: uppercase;
     text-align: center;
@@ -84,6 +92,16 @@
   .main{
     margin-block: 0;
     align-self: center;
+  }
+}
+
+@keyframes show {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
   }
 }
 

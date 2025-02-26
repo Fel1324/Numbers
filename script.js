@@ -1,5 +1,9 @@
 "use strict";
 
+const main = document.querySelector(".main");
+const mainDraw = document.querySelector("#mainDraw");
+const mainResults = document.querySelector("#mainResults");
+
 const formEl = document.querySelector("#form");
 const numbersEl = document.querySelector("#numbers");
 const startsEl = document.querySelector("#starts");
@@ -16,45 +20,62 @@ const numbersList = [];
 
 class NumberDrawer {
   constructor(numbers, starts, end){
-    this.prizeDraw = {
-      numbers: Number(numbers),
-      starts: Number(starts),
-      end: Number(end),
-    };
+    const error = this.validate(numbers, starts, end);
+    if(error) throw new Error(error);
+
+    this.numbers = Number(numbers);
+    this.starts = Number(starts);
+    this.end = Number(end);
   }
 
   draw(){
-    try{
-      const value = this.prizeDraw.numbers;
-      const min = Math.floor(this.prizeDraw.starts);
-      const max = Math.floor(this.prizeDraw.end);
-  
-      const error = this.validate(value, min, max);
-      if(error) throw new Error(error);
-  
-      for(let i = 0; i < this.prizeDraw.numbers; i++){
-        console.log(Math.floor(Math.random() * (max - min + 1) + min));
+    let num;
+
+    if(repeatNumberEl.checked){
+      if(this.numbers > (this.end - this.starts) + 1){
+        throw new Error("Não há quantidade de números suficientes dentro deste intervalo!");
       }
 
-    } catch(error){
-      alert(String(error).replace("Error: ", ""));
+      while(numbersList.length + 1 <= this.numbers){
+        num = Math.floor(Math.random() * (this.end - this.starts + 1) + this.starts);
+        if(numbersList.indexOf(num) === -1) numbersList.push(num);
+      }
+
+    } else {
+      while(numbersList.length + 1 <= this.numbers){
+        num = Math.floor(Math.random() * (this.end - this.starts + 1) + this.starts);
+        numbersList.push(num);
+      }
     }
+
+    mainDraw.classList.add("hidden");
+    mainResults.classList.remove("hidden");
+
+    this.showResults();
   }
 
-  validate(value, min, max){
-    if(value < 1 || min < 1 || max < 1){
-      return "Nenhum dos campos pode estar vazio ou ser igual a zero!"
+  showResults(){
+    console.log(numbersList);
+  }
+
+  validate(numbers, starts, end){
+    if(numbers === "" || starts === "" || end === ""){
+      return "Nenhum dos campos pode estar vazio!";
     }
 
-    if(min >= max){
-      return "O número minímo não pode ser igual nem maior que o máximo!";
+    if(numbers < 1 || end < 1){
+      return "A quantidade de números sorteados ou o máximo não podem ser zero!";
     }
 
-    if(value > 100){
+    if(Number(starts) >= Number(end)){
+      return "O minímo não pode ser igual nem maior que o máximo!";
+    }
+
+    if(numbers > 100){
       return "O máximo de números que podem ser sorteados é 100!"
     }
 
-    if(max > 999){
+    if(end > 999){
       return "O máximo não pode ser mais do que 999!"
     }
   }
@@ -63,11 +84,16 @@ class NumberDrawer {
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const numberDrawer = new NumberDrawer(
-    numbersEl.value,
-    startsEl.value,
-    endEl.value,
-  );
+  try {
+    const numberDrawer = new NumberDrawer(
+      numbersEl.value,
+      startsEl.value,
+      endEl.value,
+    );
 
-  numberDrawer.draw();  
+    numberDrawer.draw();
+
+  } catch(error){
+    alert(String(error).replace("Error: ", ""));
+  }
 });
