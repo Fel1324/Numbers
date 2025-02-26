@@ -64,7 +64,7 @@ class NumberDrawer {
       num.textContent = number;
       
       num.style.setProperty("--delay", `${delay}s`);
-      delay += 3;
+      delay += 2.25;
 
       results.append(num);
 

@@ -22,8 +22,8 @@
     &::before{
       content: "";
       display: block;
-      width: 6.25rem;
-      height: 6.25rem;
+      width: 5.75rem;
+      height: 5.75rem;
     
       background-color: var(--content-brand);
       border-radius: 1.75rem;
@@ -37,10 +37,14 @@
 
 @keyframes showNumber{
   0%{
-    scale: 1.1;
+    scale: 0;
     color: var(--content-brand);
   }
   10%{
+    scale: 0;
+    color: var(--content-brand);
+  }
+  30%{
     scale: 1.1;
     color: var(--content-brand);
   }
@@ -126,6 +130,11 @@
   90%{
     scale: 1;
     opacity: 1;
+    rotate: 180deg;
+  }
+  95%{
+    scale: 1;
+    opacity: .5;
     rotate: 180deg;
   }
   100%{
