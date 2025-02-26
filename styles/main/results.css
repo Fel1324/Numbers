@@ -2,6 +2,7 @@
   margin-block: 2.5rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: .25rem;
 
   & > .number{
@@ -15,7 +16,8 @@
 
     width: 5.25rem;
     height: 6.25rem;
-    animation: showNumber 3s forwards;
+    scale: 0;
+    animation: showNumber 2.5s var(--delay) forwards;
 
     &::before{
       content: "";
@@ -28,7 +30,7 @@
       position: absolute;
       z-index: -1;
 
-      animation: showBefore 3s forwards;
+      animation: showBefore 2.5s var(--delay) forwards;
     }
   }
 }

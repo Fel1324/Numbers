@@ -12,7 +12,6 @@ const endEl = document.querySelector("#end");
 const repeatNumberEl = document.querySelector("#repeatNumber");
 
 const numbersList = [];
-let delay = 1000;
 
 [numbersEl, startsEl, endEl].forEach((input) => {
   input.addEventListener("input", () => {
@@ -57,12 +56,20 @@ class NumberDrawer {
   }
 
   showResults(){
+    let delay = 0;
+    
     numbersList.forEach((number) => {
       const num = document.createElement("li");
       num.classList.add("number");
       num.textContent = number;
+      
+      num.style.setProperty("--delay", `${delay}s`);
+      delay += 3;
 
       results.append(num);
+
+      console.dir(num);
+      
     })
   }
 
@@ -79,8 +86,8 @@ class NumberDrawer {
       return "O minímo não pode ser igual nem maior que o máximo!";
     }
 
-    if(numbers > 100){
-      return "O máximo de números que podem ser sorteados é 100!"
+    if(numbers > 20){
+      return "O máximo de números que podem ser sorteados é 20!"
     }
 
     if(end > 999){

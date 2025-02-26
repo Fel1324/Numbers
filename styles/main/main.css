@@ -44,9 +44,10 @@
   border-radius: .5rem;
   padding: .125rem;
 
-  &.opacity{
+  /* &.opacity{
     opacity: 0;
-  }
+    animation: show 2s 3s forwards;
+  } */
 
   & > .btn{
     background-color: var(--background-tertiary);
