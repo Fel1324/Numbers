@@ -44,13 +44,16 @@
   border-radius: .5rem;
   padding: .125rem;
 
-  /* &.opacity{
-    opacity: 0;
-    animation: show 2s 3s forwards;
-  } */
+  &#btnAgain{
+    background: transparent;
+    & > .btn{
+      opacity: 0;
+      animation: show 2s var(--delay) forwards;
+    }
+  }
 
   & > .btn{
-    background-color: var(--background-tertiary);
+    background: var(--background-tertiary);
     border: none;
     border-radius: .4375rem;
     width: 100%;
@@ -65,7 +68,7 @@
     justify-content: center;
     gap: .5rem;
 
-    transition: background-color 500ms ease-in-out;
+    transition: background 500ms ease-in-out;
 
     & > img{
       transition: transform 350ms ease-in-out;
@@ -76,7 +79,7 @@
     animation: alternativeGradient 700ms infinite;
 
     & > .btn{
-      background-color: var(--background-secondary);
+      background: var(--background-secondary);
 
       & > img[src*="arrow"]{
         transform: translateX(.625rem);

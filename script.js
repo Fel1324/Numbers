@@ -10,8 +10,9 @@ const numbersEl = document.querySelector("#numbers");
 const startsEl = document.querySelector("#starts");
 const endEl = document.querySelector("#end");
 const repeatNumberEl = document.querySelector("#repeatNumber");
+const btnAgain = document.querySelector("#btnAgain");
 
-const numbersList = [];
+let numbersList = [];
 
 [numbersEl, startsEl, endEl].forEach((input) => {
   input.addEventListener("input", () => {
@@ -68,7 +69,9 @@ class NumberDrawer {
       delay += 2;
 
       results.append(num);
-    })
+    });
+
+    btnAgain.style.setProperty("--delay", `${delay}s`);
   }
 
   validate(numbers, starts, end){
@@ -93,6 +96,13 @@ class NumberDrawer {
     }
   }
 }
+
+btnAgain.addEventListener("click", () => {
+  mainDraw.classList.remove("hidden");
+  mainResults.classList.add("hidden");
+  numbersList = [];
+  results.innerHTML = ``;
+});
 
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
