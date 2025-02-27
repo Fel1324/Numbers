@@ -103,7 +103,7 @@ class NumberDrawer {
 btnAgain.addEventListener("click", () => {
   mainDraw.classList.remove("hidden");
   mainResults.classList.add("hidden");
-  
+
   numbersList = [];
   results.innerHTML = ``;
 
@@ -121,6 +121,12 @@ formEl.addEventListener("submit", (event) => {
     );
 
     numberDrawer.draw();
+
+    numbersEl.value = "";
+    numbersEl.focus();
+
+    startsEl.value = "";
+    endEl.value = "";
 
   } catch(error){
     alert(String(error).replace("Error: ", ""));
