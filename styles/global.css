@@ -89,10 +89,6 @@ ul{
 }
 
 @media screen and (width >= 1024px) {
-  body{
-    padding-block: 4.75rem;
-  }
-
   .logo{
     text-align: left;
   }
