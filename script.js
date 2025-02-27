@@ -58,18 +58,16 @@ class NumberDrawer {
   showResults(){
     let delay = 0;
     
-    numbersList.forEach((number) => {
+    numbersList.forEach((number, index) => {
       const num = document.createElement("li");
       num.classList.add("number");
       num.textContent = number;
       
-      num.style.setProperty("--delay", `${delay}s`);
-      delay += 2.25;
+      const extraDelay = index === 0 ? 0.1 : 0; 
+      num.style.setProperty("--delay", `${delay + extraDelay}s`);
+      delay += 2;
 
       results.append(num);
-
-      console.dir(num);
-      
     })
   }
 

@@ -14,10 +14,13 @@
     position: relative;
     z-index: 100;
 
+    color: var(--content-brand);
     width: 5.25rem;
     height: 6.25rem;
-    scale: 0;
-    animation: showNumber 2.5s var(--delay) forwards;
+    
+    transform: scale(0);
+    opacity: 0;
+    animation: showNumber 2.25s var(--delay) forwards;
 
     &::before{
       content: "";
@@ -30,115 +33,121 @@
       position: absolute;
       z-index: -1;
 
-      animation: showBefore 2.5s var(--delay) forwards;
+      animation: showBefore 2.25s var(--delay) forwards;
     }
   }
 }
 
 @keyframes showNumber{
   0%{
-    scale: 0;
+    transform: scale(0);
+    opacity: 0;
     color: var(--content-brand);
   }
   10%{
-    scale: 0;
+    transform: scale(0);
+    opacity: 0;
     color: var(--content-brand);
   }
   30%{
-    scale: 1.1;
+    transform: scale(1.1);
+    opacity: 1;
     color: var(--content-brand);
   }
   50%{
-    scale: 1.1;
+    transform: scale(1.1);
+    opacity: 1;
     color: var(--content-brand);
   }
   90%{
-    scale: 1.1;
+    transform: scale(1.1);
+    opacity: 1;
     color: var(--color-inverse);
   }
   100%{
-    scale: 1;
+    transform: scale(1);
+    opacity: 1;
     color: var(--content-brand);
   }
 }
 
 @keyframes showBefore{
   0%{
-    scale: 0;
+    transform: scale(0);
     rotate: 0deg;
   }
   30%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 0deg;
   }
   35%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 0deg;
   }
   40%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 18deg;
   }
   45%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 36deg;
   }
   50%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 54deg;
   }
   55%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 72deg;
   }
   60%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 90deg;
   }
   65%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 108deg;
   }
   70%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 126deg;
   }
   75%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 144deg;
   }
   80%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 162deg;
   }
   85%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 180deg;
   }
   90%{
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
     rotate: 180deg;
   }
   95%{
-    scale: 1;
+    transform: scale(1);
     opacity: .5;
     rotate: 180deg;
   }
   100%{
-    scale: 1;
+    transform: scale(1);
     opacity: 0;
     rotate: 180deg;
   }
