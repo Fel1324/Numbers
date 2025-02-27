@@ -1,40 +1,10 @@
-.carousel{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  & > .carouselBtn{
-    background: var(--background-tertiary);
-    flex-basis: 1.5rem;
-    border-radius: 50%;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    padding: .125rem;
-
-    &:hover, &:focus{ 
-      animation: alternativeGradient 700ms infinite;
-    }
-
-    & > div{
-      background: var(--background-tertiary);
-      border-radius: 50%;
-      width: 2.125rem;
-      height: 2.125rem;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-}
-
 #results{
-  margin-block: 2.5rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  column-gap: 1rem;
+  
+  margin-block: 2.5rem;
 
   & > .number{
     display: flex;

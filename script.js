@@ -4,13 +4,16 @@ const main = document.querySelector(".main");
 const mainDraw = document.querySelector("#mainDraw");
 const mainResults = document.querySelector("#mainResults");
 const results = document.querySelector("#results");
+const btnAgain = document.querySelector("#btnAgain");
+
+const numberResults = document.querySelector("#numberResults");
+let resultsQuantity = 2;
 
 const formEl = document.querySelector("#form");
 const numbersEl = document.querySelector("#numbers");
 const startsEl = document.querySelector("#starts");
 const endEl = document.querySelector("#end");
 const repeatNumberEl = document.querySelector("#repeatNumber");
-const btnAgain = document.querySelector("#btnAgain");
 
 let numbersList = [];
 
@@ -87,12 +90,12 @@ class NumberDrawer {
       return "O minímo não pode ser igual nem maior que o máximo!";
     }
 
-    if(numbers > 20){
-      return "O máximo de números que podem ser sorteados é 20!"
+    if(numbers > 10){
+      return "O máximo de números que podem ser sorteados é 10!";
     }
 
     if(end > 999){
-      return "O máximo não pode ser mais do que 999!"
+      return "O máximo não pode ser mais do que 999!";
     }
   }
 }
@@ -100,8 +103,11 @@ class NumberDrawer {
 btnAgain.addEventListener("click", () => {
   mainDraw.classList.remove("hidden");
   mainResults.classList.add("hidden");
+  
   numbersList = [];
   results.innerHTML = ``;
+
+  numberResults.textContent = `${resultsQuantity++}º resultado`;
 });
 
 formEl.addEventListener("submit", (event) => {

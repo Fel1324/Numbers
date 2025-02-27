@@ -23,7 +23,7 @@
       </header>
 
       <main class="main">
-        <div id="mainDraw" class="hidden">
+        <div id="mainDraw">
           <h2>Quero sortear:</h2>
           <p>Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
 
@@ -67,25 +67,11 @@
           </form>
         </div>
 
-        <div id="mainResults" class="">
+        <div id="mainResults" class="hidden">
           <h2 class="txt-center mg-top">Resultado do sorteio</h2>
           <span id="numberResults">1º resultado</span>
 
-          <div class="carousel">
-            <button class="carouselBtn" id="prev" aria-label="Resultado anterior">
-              <div>
-                <img src="./assets/icons/chevron-left.svg" alt="">
-              </div>
-            </button>
-
-            <ul id="results" role="list"></ul>
-
-            <button class="carouselBtn" id="next" aria-label="Próximo resultado">
-              <div>
-                <img src="./assets/icons/chevron-right.svg" alt="">
-              </div>
-            </button>
-          </div>
+          <ul id="results" role="list"></ul>
 
           <div id="btnAgain" class="btn-wrapper">
             <button class="btn" type="button" aria-label="Sortear novamente">
