@@ -10,6 +10,7 @@
     <title>Numbers | Sorteador de números</title>
     <link rel="stylesheet" href="./styles/imports.css">
   </head>
+
   <body>
     <div class="logo">
       <img src="./assets/logo.svg" alt="Logo Numbers">
@@ -22,7 +23,7 @@
       </header>
 
       <main class="main">
-        <div id="mainDraw">
+        <div id="mainDraw" class="hidden">
           <h2>Quero sortear:</h2>
           <p>Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
 
@@ -66,11 +67,25 @@
           </form>
         </div>
 
-        <div id="mainResults" class="hidden">
+        <div id="mainResults" class="">
           <h2 class="txt-center mg-top">Resultado do sorteio</h2>
-          <span>1º resultado</span>
+          <span id="numberResults">1º resultado</span>
 
-          <ul role="list" id="results"></ul>
+          <div class="carousel">
+            <button class="carouselBtn" id="prev" aria-label="Resultado anterior">
+              <div>
+                <img src="./assets/icons/chevron-left.svg" alt="">
+              </div>
+            </button>
+
+            <ul id="results" role="list"></ul>
+
+            <button class="carouselBtn" id="next" aria-label="Próximo resultado">
+              <div>
+                <img src="./assets/icons/chevron-right.svg" alt="">
+              </div>
+            </button>
+          </div>
 
           <div id="btnAgain" class="btn-wrapper">
             <button class="btn" type="button" aria-label="Sortear novamente">

@@ -62,7 +62,7 @@ class NumberDrawer {
     numbersList.forEach((number, index) => {
       const num = document.createElement("li");
       num.classList.add("number");
-      num.textContent = number;
+      num.textContent = number < 10 ? `0${number}` : number;
       
       const extraDelay = index === 0 ? 0.1 : 0; 
       num.style.setProperty("--delay", `${delay + extraDelay}s`);
